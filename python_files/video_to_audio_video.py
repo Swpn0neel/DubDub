@@ -12,8 +12,8 @@ def extract_audio_and_remove_audio(input_video_path, output_audio_path, output_v
     audio_clip.close()
 
 if __name__ == "__main__":
-    input_video_path = "input_video.mp4"
-    output_audio_path = "output_audio.mp3"
-    output_video_path = "output_video_without_audio.mp4"
+    input_video_path = "./downloads/input_video.mp4"
+    output_audio_path = "./downloads/output_audio.mp3"
+    output_video_path = "./downloads/output_video_without_audio.mp4"
 
     extract_audio_and_remove_audio(input_video_path, output_audio_path, output_video_path)

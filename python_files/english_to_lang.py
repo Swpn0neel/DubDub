@@ -3,10 +3,7 @@ import random
 
 def translate_paragraph(input_paragraph, target_language):
     try:
-        # Create a translator object
         translator = Translator(to_lang=target_language)
-
-        # Translate the input paragraph
         translated_text = translator.translate(input_paragraph)
 
         return translated_text
@@ -15,8 +12,12 @@ def translate_paragraph(input_paragraph, target_language):
         return str(e)
 
 if __name__ == "__main__":
-    input_paragraph = """This is an example paragraph that we want to translate into another language."""
-    target_languages = ["hi","bn","te","ta","pa","gu"]  # Change to the desired target language code (e.g., "es" for Spanish)
+    file_path = "transcript.txt"
+
+    with open(file_path, "r") as file:
+        input_paragraph = file.read()
+
+    target_languages = ["hi","bn","te","ta","pa","gu"]
     target_language = random.choice(target_languages)
     translated_text = translate_paragraph(input_paragraph, target_language)
 
